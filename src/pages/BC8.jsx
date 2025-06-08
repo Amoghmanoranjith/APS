@@ -62,7 +62,7 @@ export default function BusinessCase8() {
       <hr className="my-8 border-gray-300 dark:border-gray-600" />
 
       <section className="mb-8">
-        <h2 className="mb-2 font-extrabold text-2xl">Algorithm</h2>
+        <h2 className="mb-2 font-extrabold text-2xl">Algorithm: KD tree search</h2>
         <p>
           The KD-Tree partitions the <InlineMath math="d"></InlineMath>-dimensional embedding space recursively along axis-aligned hyperplanes, allowing logarithmic average query time.
         </p>

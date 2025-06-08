@@ -58,21 +58,9 @@ export default function BusinessCase1() {
       </section>
       <hr className="my-8 border-gray-300 dark:border-gray-600" />
 
-      <section className="mb-8">
-        <h2 className="mb-2 font-extrabold text-2xl">Problem Statement</h2>
-        <p>We aim to report videos whose view frequency exceeds:</p>
-        <pre className="text-lg bg-gray-100 dark:bg-white p-3 rounded">frequency &gt; m / k</pre>
-        <p>Where:</p>
-        <ul className="list-disc list-inside">
-          <li><strong>m</strong>: total number of views</li>
-          <li><strong>n</strong>: number of distinct video IDs</li>
-          <li><strong>k</strong>: number of maintained counters (accuracy-performance control)</li>
-        </ul>
-      </section>
-      <hr className="my-8 border-gray-300 dark:border-gray-600" />
 
       <section className="mb-8">
-        <h2 className="mb-2 font-extrabold text-2xl">Misra–Gries Frequency Estimation</h2>
+        <h2 className="mb-2 font-extrabold text-2xl">Algorithm: Misra–Gries Frequency Estimation</h2>
         <p><strong>Parameters:</strong></p>
         <ul className="list-disc list-inside">
           <li><strong>ε</strong>: error bound</li>
@@ -95,24 +83,8 @@ export default function BusinessCase1() {
       <hr className="my-8 border-gray-300 dark:border-gray-600" />
 
 
-      <h2 className="mb-2 font-extrabold text-2xl">Efficiency analysis</h2>
-      <ul className="list-disc list-inside">
-        <li>
-          Each key requires <InlineMath math="\lceil \log m \rceil" /> bits to store
-        </li>
-        <li>
-          Each value requires <InlineMath math="\lceil \log n \rceil" /> bits to store
-        </li>
-        <li>
-          Since there are at most <InlineMath math="k - 1" /> counters at any given time, the total space required is <InlineMath math="\mathcal{O}\left(k(\log m + \log n)\right)" />
-        </li>
-      </ul>
-
-
-
-      <hr className="my-8 border-gray-300 dark:border-gray-600" />
       <section className="mb-8">
-        <h2 className="mb-2 font-extrabold text-2xl">MG Algorithm</h2>
+        <p><strong>Pseudocode:</strong></p>
         <pre className="p-4 rounded overflow-x-auto" style={{ backgroundColor: "#000", color: "#fff" }}>
           {`Algorithm 1: Misra–Gries Frequency Estimation
 
@@ -137,17 +109,24 @@ Output(query a):
         report f̂ₐ = 0`}
         </pre>
       </section>
-      <hr className="my-8 border-gray-300 dark:border-gray-600" />
+      
 
+
+
+      <hr className="my-8 border-gray-300 dark:border-gray-600" />
       <section className="mb-8">
-        <h2 className="mb-2 font-extrabold text-2xl">Inferences</h2>
+      <h2 className="mb-2 font-extrabold text-2xl">Efficiency analysis</h2>
         <ul className="list-disc list-inside">
-          <li>
-            <strong>Space-efficient</strong>: Only maintains <InlineMath math="k - 1" /> counters.
-          </li>
-          <li>
-            <strong>Streaming-compatible</strong>: Single-pass algorithm ideal for real-time token processing.
-          </li>
+        <li>
+          Each key requires <InlineMath math="\lceil \log m \rceil" /> bits to store
+        </li>
+        <li>
+          Each value requires <InlineMath math="\lceil \log n \rceil" /> bits to store
+        </li>
+        <li>
+          Since there are at most <InlineMath math="k - 1" /> counters at any given time, the total space required is <InlineMath math="\mathcal{O}\left(k(\log m + \log n)\right)" />
+        </li>
+          
           <li>
             <strong>Guaranteed error bounds</strong>: Additive error bounded by ε <InlineMath math=" \leq \frac{1}{k + 1}" />.
           </li>
@@ -166,12 +145,6 @@ Output(query a):
 
       <hr className="my-8 border-gray-300 dark:border-gray-600" />
 
-      <section>
-        <h2 className="mb-2 font-extrabold text-2xl">Conclusion</h2>
-        <p>
-          This design offloads computational pressure from centralized infrastructure and enables real-time local trend detection. When paired with caching, it enhances performance and user experience with minimal backend strain.
-        </p>
-      </section>
     </div>
   );
 }
